@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+}
+
+main {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    .image_container {
+        position: absolute;
+        inset: 0;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .content {
+        position: relative;
+        display: flex;
+        min-height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+        .burger,
+        .tomato1,
+        .tomato2,
+        .momo,
+        .pizza,
+        .leaf {
+            position: absolute;
+            height: auto;
+            max-width: 100%;
+            pointer-events: none;
+        }
+
+        .burger {
+            top: 26%;
+            left: 13%;
+            width: clamp(80px, 14vw, 260px);
+        }
+        .tomato1 {
+            top: 54%;
+            left: 10%;
+            width: clamp(40px, 7vw, 130px);
+        }
+        .tomato2 {
+            top: 39%;
+            left: 75%;
+            width: clamp(40px, 7vw, 130px);
+        }
+        .momo {
+            top: 14%;
+            left: 64%;
+            width: clamp(70px, 12vw, 220px);
+        }
+        .pizza {
+            top: 45%;
+            left: 69%;
+            width: clamp(90px, 15vw, 280px);
+        }
+        .leaf {
+            top: 20%;
+            left: 29%;
+            width: clamp(30px, 5vw, 90px);
+        }
+
+        .center-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: clamp(20px, 4vw, 60px);
+
+            h1 {
+                font-size: clamp(22px, 5.5vw, 64px);
+                line-height: 1.05;
+                margin-bottom: clamp(16px, 3vw, 40px);
+                text-align: center;
+            }
+            p {
+                font-size: clamp(11px, 1.7vw, 24px);
+                line-height: 1.35;
+                font-weight: bold;
+                text-align: center;
+                margin: 0 auto;
+                max-width: min(450px, 90vw);
+            }
+        }
+
+        .info-section {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: clamp(30px, 8vw, 120px);
+            justify-content: center;
+            align-items: center;
+            gap: clamp(8px, 1.5vw, 16px);
+            padding: clamp(8px, 1.5vw, 15px);
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            .info-item {
+                display: flex;
+                align-items: center;
+                gap: clamp(6px, 1vw, 12px);
+
+                .info-icon {
+                    height: clamp(30px, 4vw, 50px);
+                    width: clamp(30px, 4vw, 50px);
+                    object-fit: contain;
+                }
+
+                .info-text {
+                    display: flex;
+                    flex-direction: column;
+
+                    .info-number {
+                        font-size: clamp(13px, 1.9vw, 24px);
+                        font-weight: bold;
+                        color: red;
+                    }
+
+                    .info-label {
+                        font-size: clamp(10px, 1.3vw, 16px);
+                        color: black;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Tablet / mobile */
+@media (max-width: 768px) {
+    main .content {
+        .text-content {
+            margin-bottom: 20px;
+        }
+        .info-section {
+            margin-top: 30px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .burger  { top: 8%;  left: 5%; }
+        .leaf    { top: 6%;  left: 45%; }
+        .momo    { top: 8%;  left: 70%; }
+        .tomato1 { top: 78%; left: 5%; }
+        .pizza   { top: 80%; left: 60%; }
+        .tomato2 { top: 70%; left: 82%; }
+    }
+}
